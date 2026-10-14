@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Units 19–20: Money & Shopping — Từ vựng, Ngữ pháp & Giao tiếp · Bonus · Lớp người lớn A2-B1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/lamejs@1.2.1/lame.min.js" defer></script>
+<style>
+:root{
+  --bg:#EAF6F7; --paper:#FFFFFF; --ink:#10304A; --muted:#557085; --line:#CFE3E6;
+  --sea:#0E7C86; --sea2:#2BB3B1; --seaSoft:#D5F0EF; --coral:#EF5B43; --coralSoft:#FDE3DD;
+  --sun:#FFC24B; --sunSoft:#FFF1CF; --ok:#1E8F52; --okSoft:#DDF3E6; --bad:#D23B2A; --badSoft:#FBE1DD;
+  --head:"Baloo 2", "Be Vietnam Pro", system-ui, sans-serif;
+  --body:"Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0B1E28; --paper:#12303D; --ink:#E4F2F4; --muted:#9DB8C4; --line:#24505F;
+  --sea:#43C6C4; --sea2:#2BB3B1; --seaSoft:#16434B; --coral:#FF7A63; --coralSoft:#4A2622;
+  --sun:#FFC24B; --sunSoft:#473a1b; --ok:#4FD08A; --okSoft:#173D2A; --bad:#FF7A6A; --badSoft:#4A2320;
+}}
+:root[data-theme="dark"]{
+  --bg:#0B1E28; --paper:#12303D; --ink:#E4F2F4; --muted:#9DB8C4; --line:#24505F;
+  --sea:#43C6C4; --sea2:#2BB3B1; --seaSoft:#16434B; --coral:#FF7A63; --coralSoft:#4A2622;
+  --sun:#FFC24B; --sunSoft:#473a1b; --ok:#4FD08A; --okSoft:#173D2A; --bad:#FF7A6A; --badSoft:#4A2320;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+img{max-width:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.wrap{max-width:980px;margin:0 auto;padding:16px}
+
+.hero{display:grid;grid-template-columns:1fr auto;gap:18px;background:var(--paper);border:2px solid var(--ink);border-radius:18px;padding:20px 22px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:10px;background:repeating-linear-gradient(90deg,var(--sea2) 0 22px,var(--coral) 22px 44px)}
+.hero h1{font-family:var(--head);font-weight:800;font-size:clamp(22px,5vw,32px);line-height:1.1;margin:0 0 6px}
+.hero .sub{color:var(--muted);margin:0 0 12px}
+.cue{border-left:4px solid var(--sea2);padding:4px 0 4px 14px;margin:0 0 8px}
+.cue b{font-family:var(--head);font-size:18px}
+.cue ul{margin:4px 0 0;padding-left:20px}
+.stamp{width:112px;height:132px;border:3px dashed var(--coral);border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:var(--head);transform:rotate(4deg);background:var(--coralSoft);align-self:start}
+.stamp .e{font-size:40px;line-height:1}
+.stamp .t{font-weight:800;font-size:16px;color:var(--coral)}
+.stamp .s{font-size:12px;color:var(--muted)}
+@media (max-width:560px){.hero{grid-template-columns:1fr}.stamp{display:none}}
+
+.settings{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin:14px 0 10px;font-size:14px;color:var(--muted)}
+.settings select,.settings input[type=range]{accent-color:var(--sea)}
+.settings select{max-width:230px;padding:5px 8px;border-radius:8px;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+
+.pbar-outer{height:12px;background:var(--line);border-radius:999px;overflow:hidden;margin:14px 0 4px;position:sticky;top:env(safe-area-inset-top,0px)}
+.pbar-inner{height:100%;background:var(--sea);transition:width .35s;border-radius:999px}
+.pct{font-size:13px;color:var(--muted);text-align:right;margin-bottom:8px}
+.stepper{display:flex;gap:6px;overflow-x:auto;margin-bottom:10px}
+.step-pill{flex:1;min-width:108px;border:2px solid var(--line);border-radius:12px;padding:8px 6px;text-align:center;font-size:12px;font-weight:700;background:var(--paper);white-space:nowrap}
+.step-pill.locked{opacity:.5;cursor:not-allowed}
+.step-pill.current{border-color:var(--sea);box-shadow:0 0 0 2px var(--seaSoft)}
+.step-pill.done{border-color:var(--ok);background:var(--okSoft);color:var(--ok)}
+
+.panel{display:none}
+.panel.on{display:block}
+h2{font-family:var(--head);font-weight:800;font-size:22px;margin:10px 0 4px}
+h3{font-family:var(--head);font-weight:700;font-size:17px;margin:14px 0 6px}
+.hint{color:var(--muted);font-size:14px;margin:0 0 12px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:10px 0}
+
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;margin-bottom:6px}
+.vcard{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:10px 12px;display:flex;gap:8px;align-items:flex-start}
+.vemo{font-size:20px;line-height:1.3}
+.vw{font-weight:700;font-size:15px}
+.vvi{font-size:13px;color:var(--muted)}
+.vex{font-size:12.5px;color:var(--muted);font-style:italic;display:block;margin-top:2px}
+.vplay{margin-left:auto;border:1.5px solid var(--line);background:var(--paper);border-radius:10px;padding:5px 9px;font-size:14px;flex:0 0 auto}
+.vplay:hover{border-color:var(--sea)}
+
+/* ── Rich vocab cards ── */
+.vcard-rich{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:8px 0;background:var(--paper)}
+.vrich-head{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:3px}
+.vrich-word{font-weight:700;font-size:17px;font-family:var(--head)}
+.vrich-ipa{font-size:13px;color:var(--sea);font-family:'Courier New',monospace;flex-shrink:0}
+.vrich-badge{margin-left:auto;font-size:15px;white-space:nowrap}
+.vrich-vi{color:var(--ink);font-size:14px;margin:2px 0 5px}
+.vrich-warn{background:var(--sunSoft);border-left:4px solid var(--sun);border-radius:0 8px 8px 0;padding:5px 11px;font-size:13px;margin-bottom:5px}
+.vrich-expand{font-size:13px;margin:3px 0 5px;color:var(--muted)}
+.vrich-chip{border:1.5px solid var(--sea2);border-radius:20px;padding:2px 9px;font-size:12px;background:var(--seaSoft);color:var(--sea);cursor:pointer;font:inherit;margin:2px 2px}
+.vrich-chip:hover{background:var(--sea);color:#fff}
+.vrich-ex{font-style:italic;font-size:13px;color:var(--muted);border-left:3px solid var(--line);padding-left:8px;margin:5px 0 7px}
+.vrec-row{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin-top:4px}
+.vrec-live{font-size:12.5px;color:var(--muted);min-height:0;margin-top:2px}
+.b.sm{font-size:12.5px;padding:4px 9px;border-radius:8px}
+.vstatus{font-size:12px;font-weight:600}
+
+.b{border:1.5px solid var(--line);background:var(--paper);border-radius:10px;padding:6px 12px;font-size:14px;font-weight:600;display:inline-flex;gap:5px;align-items:center}
+.b:hover:not(:disabled){border-color:var(--sea)}
+.b:disabled{opacity:.4;cursor:not-allowed}
+.b.rec{border-color:var(--coral);color:var(--coral)}
+.b.rec.on{background:var(--coral);color:#fff;animation:pulse 1.2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 6px var(--coralSoft)}}
+@media (prefers-reduced-motion:reduce){.b.rec.on{animation:none}}
+.b.primary{background:var(--sea);border-color:var(--sea);color:#fff}
+.timer{font-variant-numeric:tabular-nums;color:var(--coral);font-weight:700;font-size:14px}
+.live{font-size:14px;color:var(--muted);min-height:0}
+.live:not(:empty){margin-top:6px}
+.res:not(:empty){margin-top:8px;padding:10px 12px;border-radius:10px;background:var(--bg)}
+.frame{font-size:15px;background:var(--seaSoft);border-radius:10px;padding:6px 10px;margin:6px 0}
+
+textarea{width:100%;min-height:56px;border-radius:10px;border:1.5px solid var(--line);padding:8px 10px;font:inherit;background:var(--paper);color:var(--ink);resize:vertical}
+input[type=text]{padding:9px 12px;border-radius:10px;border:1.5px solid var(--line);font:inherit;background:var(--paper);color:var(--ink);min-width:200px}
+
+.qcard{border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:10px 0;background:var(--paper)}
+.qq{font-weight:700;margin-bottom:8px}
+.qopts{display:flex;flex-wrap:wrap;gap:8px}
+.qopt{border:1.5px solid var(--line);background:var(--bg);border-radius:10px;padding:7px 12px;font-size:14px;text-align:left}
+.qopt:hover{border-color:var(--sea)}
+.qopt.correct{border-color:var(--ok);background:var(--okSoft);color:var(--ok);font-weight:700}
+.qopt.wrong{border-color:var(--bad);background:var(--badSoft);color:var(--bad)}
+.qfb{margin-top:8px;font-size:14px}
+.qfb.ok{color:var(--ok)}
+.qfb.bad{color:var(--bad)}
+
+.passage{font-size:15.5px}
+.passage p{margin:0 0 10px}
+
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:12px;font-size:14px;z-index:20;display:none;max-width:90%}
+.warn{background:var(--sunSoft);border-radius:10px;padding:8px 12px;font-size:14px}
+.cloud{position:fixed;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));background:var(--paper);border:1.5px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:600;z-index:15;box-shadow:0 2px 8px rgba(16,48,74,.12)}
+.gate{position:fixed;inset:0;background:rgba(11,30,40,.55);z-index:40;display:flex;align-items:center;justify-content:center;padding:16px}
+.gate[hidden]{display:none}
+.gate-box{background:var(--paper);border:2px solid var(--ink);border-radius:18px;padding:22px;max-width:380px;width:100%;text-align:center}
+.gate-box input{width:100%;font-size:18px;min-width:0}
+.sent-ok{color:var(--ok);font-size:13px;font-weight:600}
+.sent-wait{color:var(--muted);font-size:13px}
+.sent-bad{color:var(--bad);font-size:13px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+td,th{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+.tbl{overflow-x:auto}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div>
+    <h1>Units 19–20 · Money &amp; Shopping</h1>
+    <p class="sub">Từ vựng · Ngữ pháp · Giao tiếp thực tế · Tranh luận · Bài tập nâng cao</p>
+    <div class="cue">
+      <b>📋 Nội dung bài</b>
+      <ul>
+        <li><b>Bước 1:</b> 28 từ/cụm (tiền, mua sắm, thành ngữ) — nghe + ghi âm từng từ &amp; gửi cho thầy/cô</li>
+        <li><b>Bước 2:</b> Ngữ pháp <i>another / other / the other / the same</i> + sửa lỗi thường gặp</li>
+        <li><b>Bước 3:</b> Giao tiếp thực tế — chọn câu đúng theo tình huống</li>
+        <li><b>Bước 4:</b> Đọc hiểu về thói quen mua sắm tại Việt Nam</li>
+        <li><b>Bước 5:</b> Tranh luận — online shopping vs in-store shopping</li>
+      </ul>
+    </div>
+  </div>
+  <div class="stamp" aria-hidden="true"><span class="e">🛍️</span><span class="t">Bonus</span><span class="s">Units 19–20</span></div>
+</header>
+
+<div class="settings">
+  <label>Giọng đọc: <select id="voiceSel"><option>Đang tải giọng…</option></select></label>
+  <label>Tốc độ: <input id="rate" type="range" min="0.6" max="1.15" step="0.05" value="0.9"> <span id="rateV">0.9</span></label>
+</div>
+
+<div class="pbar-outer"><div class="pbar-inner" id="pbarInner" style="width:0%"></div></div>
+<div class="pct" id="pbarPct">0/5 bước hoàn thành (0%)</div>
+<nav class="stepper" id="stepperNav"></nav>
+
+<section class="panel on" id="p-s1">
+  <h2>Bước 1 · Từ vựng tiền &amp; mua sắm</h2>
+  <p class="hint">Dưới đây là <b>28 từ/cụm</b> — bấm 🔊 nghe từng từ, rồi ghi âm &amp; gửi ít nhất <b>5 từ</b> cho thầy/cô trước khi sang Bước 2.</p>
+  <div id="s1Groups"></div>
+  <div style="margin-top:14px"><button class="b primary" id="s1Next">➡ Sang Bước 2</button></div>
+</section>
+
+<section class="panel" id="p-s2">
+  <h2>Bước 2 · Ngữ pháp &amp; sửa lỗi</h2>
+  <div class="card" style="margin-bottom:14px">
+    <h3 style="margin-top:0">📌 Bảng ngữ pháp: another / other / the other / the same</h3>
+    <table style="width:100%;border-collapse:collapse;font-size:15px">
+      <tr style="background:var(--seaSoft)"><th style="padding:6px;text-align:left;border:1px solid var(--line)">Cấu trúc</th><th style="padding:6px;text-align:left;border:1px solid var(--line)">Cách dùng</th><th style="padding:6px;text-align:left;border:1px solid var(--line)">Ví dụ</th></tr>
+      <tr><td style="padding:6px;border:1px solid var(--line)"><b>another</b> + N(số ít)</td><td style="padding:6px;border:1px solid var(--line)">một cái khác (còn nhiều)</td><td style="padding:6px;border:1px solid var(--line)"><i>Can I try another size?</i></td></tr>
+      <tr style="background:var(--seaSoft)"><td style="padding:6px;border:1px solid var(--line)"><b>other</b> + N(số nhiều)</td><td style="padding:6px;border:1px solid var(--line)">những cái khác</td><td style="padding:6px;border:1px solid var(--line)"><i>Do you have other colours?</i></td></tr>
+      <tr><td style="padding:6px;border:1px solid var(--line)"><b>the other</b> + N(số ít)</td><td style="padding:6px;border:1px solid var(--line)">cái còn lại (chỉ còn 2)</td><td style="padding:6px;border:1px solid var(--line)"><i>I tried two. The other one fit.</i></td></tr>
+      <tr style="background:var(--seaSoft)"><td style="padding:6px;border:1px solid var(--line)"><b>others</b> (không có N)</td><td style="padding:6px;border:1px solid var(--line)">những người/cái khác</td><td style="padding:6px;border:1px solid var(--line)"><i>Some pay by card; others pay cash.</i></td></tr>
+      <tr><td style="padding:6px;border:1px solid var(--line)"><b>the same</b> + N</td><td style="padding:6px;border:1px solid var(--line)">giống hệt nhau</td><td style="padding:6px;border:1px solid var(--line)"><i>This is the same price as online.</i></td></tr>
+    </table>
+  </div>
+  <p class="hint">Phần A: Chọn đúng <b>another / other / the other / others / the same</b>.</p>
+  <div id="s2GramBox"></div>
+  <h3 style="margin:18px 0 6px;color:var(--coral)">⚠️ Phần B: Tìm và sửa lỗi thường gặp</h3>
+  <p class="hint" style="margin:0 0 10px">Mỗi cặp câu có 1 câu sai và 1 câu đúng — bấm chọn câu <b>đúng</b>.</p>
+  <div id="s2ErrBox"></div>
+  <div style="margin-top:10px"><button class="b primary" id="s2Next">➡ Sang Bước 3</button></div>
+</section>
+
+<section class="panel" id="p-s3">
+  <h2>Bước 3 · Giao tiếp thực tế khi đi mua sắm</h2>
+  <p class="hint">Đọc mỗi tình huống rồi chọn câu nói <b>tự nhiên và đúng nhất</b> trong tiếng Anh. Chú ý cách dùng lịch sự và đúng ngữ pháp.</p>
+  <div id="s3Box"></div>
+  <div style="margin-top:10px"><button class="b primary" id="s3Next">➡ Sang Bước 4</button></div>
+</section>
+
+<section class="panel" id="p-s4">
+  <h2>Bước 4 · Đọc hiểu: Shopping in Vietnam</h2>
+  <p class="hint">Bài đọc do Claude tự soạn mới. Đọc kỹ rồi trả lời 6 câu hỏi bên dưới.</p>
+  <div class="card">
+    <button class="b" id="playPassage">🔊 Nghe cả bài</button>
+    <div class="passage" id="passageBox" style="margin-top:10px"></div>
+  </div>
+  <div id="s4Box"></div>
+  <div style="margin-top:10px"><button class="b primary" id="s4Next">➡ Sang Bước 5</button></div>
+</section>
+
+<section class="panel" id="p-s5">
+  <h2>Bước 5 · Tranh luận: Online Shopping vs In-Store Shopping</h2>
+  <p class="hint">Phát triển lập luận — đọc gợi ý, viết câu hỗ trợ, rồi ghi âm ý kiến của em.</p>
+  <div class="card" id="debateBrainBox">
+    <h3 style="margin-top:0">💡 Gợi ý ý tưởng (Brainstorm)</h3>
+    <p style="font-style:italic;color:var(--muted);font-size:14px;margin:0 0 12px">Topic sentence: <b>"Online shopping is more convenient than shopping in a store."</b></p>
+    <div id="debateSides" style="display:grid;grid-template-columns:1fr 1fr;gap:12px"></div>
+  </div>
+  <div class="card" style="margin-top:0">
+    <h3 style="margin-top:0">✏️ Viết câu hỗ trợ (ít nhất 4–5 câu)</h3>
+    <p class="hint" style="margin:0 0 8px">Chọn 1 lập luận (đồng ý <i>hoặc</i> không đồng ý) và viết 4–5 câu hỗ trợ cho topic sentence trên. Dùng từ vựng ở Bước 1.</p>
+    <textarea id="debateWrite" rows="6" style="width:100%;border:2px solid var(--line);border-radius:10px;padding:10px;font-family:var(--body);font-size:15px;background:var(--paper);color:var(--ink);resize:vertical" placeholder="Ví dụ: First, online shopping saves a lot of time because…"></textarea>
+    <div style="font-size:13px;color:var(--muted);text-align:right;margin-top:4px">Số từ: <span id="writeCount">0</span></div>
+  </div>
+  <div class="card" id="speakQBox" style="margin-top:0"></div>
+  <div id="s5CardBox"></div>
+  <div style="margin-top:10px"><button class="b primary" id="s5Next">➡ Sang Nộp bài</button></div>
+</section>
+
+<section class="panel" id="p-send">
+  <h2>Nộp bài cho giáo viên</h2>
+  <p class="hint">Em đã hoàn thành cả 5 bước — kiểm tra lại tóm tắt bên dưới rồi bấm nút để nộp bài.</p>
+  <div class="card">
+    <div style="margin-bottom:10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">Tên em: <input type="text" id="stuName" placeholder="Họ và tên"></div>
+    <button class="b primary" id="submitBtn" style="font-size:18px;padding:10px 18px">📨 Nộp bài cho thầy/cô</button>
+    <div id="submitMsg" class="tip"></div>
+  </div>
+  <h3>Em đã làm được</h3>
+  <div id="sumBox"></div>
+</section>
+
+</div>
+<div class="toast" id="toast" role="status"></div>
+<div class="cloud" id="cloud" hidden></div>
+<div class="gate" id="gate" hidden>
+  <div class="gate-box">
+    <div style="font-size:48px">🛍️</div>
+    <h2 style="margin:4px 0">Chào em!</h2>
+    <p>Em gõ họ và tên để thầy/cô nhận được bài nhé.</p>
+    <input type="text" id="gateName" placeholder="Họ và tên" autocomplete="name">
+    <button class="b primary" id="gateGo" style="font-size:18px;padding:10px 20px;margin-top:12px">Bắt đầu học ▶</button>
+    <p class="tip" style="color:var(--muted)">🎙 Khi máy hỏi dùng micro, em bấm <b>Cho phép</b> (Allow).</p>
+  </div>
+</div>
+<div class="warn" id="noUrl" hidden style="position:fixed;top:0;left:0;right:0;z-index:30;border-radius:0;text-align:center">⚙️ Thầy/cô chưa dán link nhận bài (SCRIPT_URL) vào trang này, nên bài chưa gửi được.</div>
+
+<script>
+/* ===== DATA ===== */
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwnf8X3_Xfk9F_8HQtBwSFU_s28sRjxKb0aFaHCA4ybmMJvgaztBAbdvaFzITdbVXBt/exec';
+const LESSON = 'Unit19-20-Money-Shopping-Bonus';
+
+const VOCAB_GROUPS=[
+ {group:'Tiền & Thanh toán 💰',items:[
+   {en:'bill',ipa:'/bɪl/',vi:'hóa đơn (nhà hàng); tờ tiền giấy (Mỹ)',ex:"A: Can I have the bill, please? B: Of course! I'll bring it right away.",say:'bill',expand:['water bill','electricity bill','medical bill','phone bill'],warn:null},
+   {en:'receipt',ipa:'/rɪˈsiːt/',vi:'biên lai — nhận sau khi trả tiền',ex:"A: Could I have a receipt? B: Sure, here you go. Keep it in case you need to return the item.",say:'receipt',expand:['keep your receipt','print a receipt','digital receipt'],warn:'⚠️ Chữ "p" hoàn toàn câm! Đọc /rɪˈsiːt/ — KHÔNG đọc /rɪˈsiːpt/.'},
+   {en:'coin',ipa:'/kɔɪn/',vi:'đồng xu',ex:"A: Do you have any coins? B: Sorry, I only have notes today. Can you break a fifty?",say:'coin',expand:['coin purse','a handful of coins','insert a coin'],warn:'⚠️ Diphthong /ɔɪ/ — giống "boy", "toy", "oil". KHÔNG đọc /kon/.'},
+   {en:'note',ipa:'/nəʊt/',vi:'tờ tiền giấy (UK)',ex:"A: I only have a fifty-pound note. B: That\'s fine, I can give you change.",say:'note',expand:['a ten-pound note','banknote','paper money'],warn:'⚠️ "o" đọc /əʊ/ (giống "go", "so", "no") — KHÔNG phải /o/ ngắn như tiếng Việt.'},
+   {en:'currency',ipa:'/ˈkɜːrənsi/',vi:'tiền tệ, ngoại tệ',ex:"A: What currency do they accept here? B: Mostly dong, but some shops take dollars.",say:'currency',expand:['foreign currency','exchange currency','local currency'],warn:'⚠️ Âm /ɜː/ (giống "her", "bird", "turn") — KHÔNG phải /u/ hay /ju/. Đọc: KƯR-ən-si.'},
+   {en:'change',ipa:'/tʃeɪndʒ/',vi:'tiền thối',ex:"A: I gave you 100. Where\'s my change? B: Oh sorry! Here\'s 30,000 dong back.",say:'change',expand:['give change','keep the change','wrong change'],warn:null}
+ ]},
+ {group:'Động từ mua sắm 🛍️',items:[
+   {en:'try on',ipa:'/traɪ ɒn/',vi:'thử (quần áo, giày)',ex:"A: Could I try on this jacket in a medium? B: Of course, the fitting room is over there.",say:'try on',expand:['try on a dress','try on shoes','try on a hat'],warn:null},
+   {en:'put on',ipa:'/pʊt ɒn/',vi:'mặc/đeo vào người',ex:"A: Put on the coat and see if it fits. B: OK, it feels a bit tight at the shoulders.",say:'put on',expand:['put on a hat','put on glasses','put on sunscreen'],warn:null},
+   {en:'take off',ipa:'/teɪk ɒf/',vi:'cởi ra, tháo ra',ex:"A: Please take off your shoes at the door. B: No problem, I\'ll leave them outside.",say:'take off',expand:['take off your jacket','take off a ring','take off sunglasses'],warn:null},
+   {en:'pay for',ipa:'/peɪ fɔː/',vi:'trả tiền cho thứ gì',ex:"A: Don\'t worry about the coffee — I\'ll pay for it. B: Are you sure? Thank you!",say:'pay for',expand:['pay for dinner','pay for the ticket','pay for repairs'],warn:null},
+   {en:'look for',ipa:'/lʊk fɔː/',vi:'tìm kiếm',ex:"A: Excuse me, I\'m looking for a blue shirt in size large. B: Let me check the back for you.",say:'look for',expand:['look for a job','look for a bargain','look for a size'],warn:null},
+   {en:'compare prices',ipa:'/kəmˈpeər ˈpraɪsɪz/',vi:'so sánh giá',ex:"A: I always compare prices online before buying. B: Smart! You can save a lot that way.",say:'compare prices',expand:['compare prices online','compare prices between shops','price comparison app'],warn:null}
+ ]},
+ {group:'Giá & Khuyến mãi 🏷️',items:[
+   {en:'on sale',ipa:'/ɒn seɪl/',vi:'đang giảm giá (sale, khuyến mãi)',ex:"A: These shoes are on sale — 30% off! B: That\'s a great deal. I\'ll take them.",say:'on sale',expand:['items on sale','everything on sale','on sale this week'],warn:'⚠️ "sale" đọc /seɪl/ — diphthong eɪ, giống "tail", "mail". KHÔNG đọc /sel/ như "sell".'},
+   {en:'for sale',ipa:'/fɔː seɪl/',vi:'để bán, rao bán',ex:"A: Is this display model for sale? B: Yes, it is — and we can give you 10% off.",say:'for sale',expand:['house for sale','car for sale','items for sale'],warn:'⚠️ Cùng cách đọc "sale": /seɪl/. "for sale" = rao bán; "on sale" = đang khuyến mãi.'},
+   {en:'discount',ipa:'/ˈdɪskaʊnt/',vi:'chiết khấu, giảm giá',ex:"A: Do you offer a student discount? B: Yes, 15% off with a valid student card.",say:'discount',expand:['student discount','discount code','discount price','apply a discount'],warn:'⚠️ Nhấn âm ĐẦU: DIS-count /ˈdɪskaʊnt/ — KHÔNG phải dis-COUNT. Giống "DIScuss", "DIStance".'},
+   {en:'promotion',ipa:'/prəˈməʊʃən/',vi:'chương trình khuyến mãi',ex:"A: Is there a promotion on this product? B: Yes! Buy two, get one free — valid until Sunday.",say:'promotion',expand:['special promotion','seasonal promotion','promotional offer'],warn:'⚠️ "o" thứ nhất đọc /əʊ/ (giống "go"). Đọc: prə-MOH-shən. KHÔNG phải /o/ ngắn.'},
+   {en:'20% off',ipa:'/ˈtwenti pəˈsent ɒf/',vi:'giảm 20%',ex:"A: Is the jacket still 20% off? B: Yes, the promotion ends tonight at midnight.",say:'twenty percent off',expand:['10% off','half price','buy one get one free'],warn:null},
+   {en:'a pair of',ipa:'/ə peər ɒv/',vi:'một đôi/cặp (giày, tất, kính…)',ex:"A: I need a pair of trousers for my interview. B: These ones look smart — would you like to try them on?",say:'a pair of',expand:['a pair of shoes','a pair of glasses','a pair of socks','a pair of jeans'],warn:null}
+ ]},
+ {group:'Phương thức thanh toán 💳',items:[
+   {en:'pay in cash',ipa:'/peɪ ɪn kæʃ/',vi:'trả bằng tiền mặt',ex:"A: Do you accept cards, or should I pay in cash? B: We take both — whatever is easier for you.",say:'pay in cash',expand:['pay cash','cash only','cash payment'],warn:null},
+   {en:'debit card',ipa:'/ˈdebɪt kɑːd/',vi:'thẻ ghi nợ (thẻ ATM)',ex:"A: Can I pay with my debit card? B: Of course, just tap it on the reader.",say:'debit card',expand:['swipe a debit card','debit card payment','contactless debit'],warn:'⚠️ "debit" nhấn âm đầu: DEB-it /ˈdebɪt/ — KHÔNG phải deh-BIT. Giống "DEBate"? Không — nhấn khác nhau!'},
+   {en:'credit card',ipa:'/ˈkredɪt kɑːd/',vi:'thẻ tín dụng',ex:"A: Do you take credit cards? B: Yes, Visa and Mastercard. There\'s no surcharge.",say:'credit card',expand:['credit card limit','pay by credit card','credit card bill'],warn:'⚠️ "credit" nhấn âm đầu: CRED-it /ˈkredɪt/. KHÔNG đọc creh-DIT.'},
+   {en:'earn',ipa:'/ɜːn/',vi:'kiếm được; tích điểm thưởng',ex:"A: Do I earn reward points with this purchase? B: Yes! You get one point for every 10,000 dong.",say:'earn',expand:['earn money','earn points','earn a reward','earn a living'],warn:'⚠️ Âm /ɜːn/ — giống "her", "burn", "turn" + N. KHÔNG phải /iːn/ như "earn" hay /ɛn/ như "pen".'},
+   {en:'save',ipa:'/seɪv/',vi:'tiết kiệm; để dành tiền',ex:"A: Buy two and save five dollars. B: OK, I\'ll take two then — good deal!",say:'save',expand:['save money','save up','save for a holiday','save 30%'],warn:null}
+ ]},
+ {group:'Thành ngữ & cụm từ quan trọng 🗣️',items:[
+   {en:'cost an arm and a leg',ipa:'/kɒst ən ɑːm ənd ə leg/',vi:'rất đắt tiền (tiếng lóng)',ex:"A: How much was that designer bag? B: It cost an arm and a leg — nearly five million dong!",say:'cost an arm and a leg',expand:['That costs an arm and a leg.','way too expensive','overpriced'],warn:null},
+   {en:'save for a rainy day',ipa:'/seɪv fɔːr ə ˈreɪni deɪ/',vi:'tiết kiệm phòng khi cần',ex:"A: Why don\'t you spend your bonus? B: I prefer to save it for a rainy day — you never know what might happen.",say:'save for a rainy day',expand:['rainy day fund','emergency savings','keep money aside'],warn:null},
+   {en:'live from paycheck to paycheck',ipa:'/lɪv frəm ˈpeɪtʃek tə ˈpeɪtʃek/',vi:'sống hoàn toàn phụ thuộc vào lương',ex:"A: Can you afford a holiday? B: Not really — after rent and bills, I live from paycheck to paycheck.",say:'live from paycheck to paycheck',expand:['tight budget','no savings','month to month'],warn:null},
+   {en:'save money',ipa:'/seɪv ˈmʌni/',vi:'tiết kiệm tiền',ex:"A: How do you save money when shopping? B: I compare prices online and only buy things on sale.",say:'save money',expand:['save money on food','save money shopping','money-saving tips'],warn:null},
+   {en:'waste money',ipa:'/weɪst ˈmʌni/',vi:'lãng phí tiền',ex:"A: I bought three pairs of shoes this month. B: Three? That\'s wasting money if you only wear one pair!",say:'waste money',expand:['waste money on impulse buys','money down the drain','throw money away'],warn:null}
+ ]}
+];
+const VOCAB_FLAT=VOCAB_GROUPS.flatMap(g=>g.items);
+
+const GRAMMAR_Q=[
+ {q:"I don't like this shirt. Can I try on ___ one?",o:["another","other","the other"],a:0,x:"\"another\" + danh từ số ít = thêm một cái khác (còn nhiều lựa chọn)."},
+ {q:"These jeans don't fit. Do you have ___ sizes?",o:["another","other","the other"],a:1,x:"\"other\" + danh từ số nhiều = những cái khác."},
+ {q:"I tried two jackets. The first was too big, but ___ one was perfect.",o:["another","other","the other"],a:2,x:"\"the other\" = cái còn lại khi chỉ có 2 vật — luôn có \"the\"."},
+ {q:"This bag is ___ price as the one online.",o:["same","the same","another"],a:1,x:"\"the same + danh từ\" — luôn có \"the\" trước \"same\"."},
+ {q:"Some customers pay by card; ___ pay in cash.",o:["other","others","the other"],a:1,x:"\"others\" (không có danh từ sau) = những người khác trong nhóm đó."},
+ {q:"I already have one bag. I'd like to buy ___.",o:["another","other ones","the other"],a:0,x:"\"another\" thay thế cho danh từ đã biết (another one/bag) — viết gọn là \"another\"."},
+ {q:"Both stores are cheap, but ___ one has a better discount.",o:["another","other","the other"],a:2,x:"Chỉ 2 cửa hàng → cái còn lại = \"the other\"."},
+ {q:"I found ___ great promotion – 30% off everything!",o:["an other","another","other"],a:1,x:"\"another\" = a + other, viết liền nhau. Không viết tách \"an other\"."}
+];
+
+const ERROR_Q=[
+ {q:"Câu nào đúng?",o:["I want try on this jacket.","I want to try on this jacket."],a:1,x:"\"want to\" + động từ nguyên mẫu — không bỏ \"to\"."},
+ {q:"Câu nào đúng?",o:["These shoes is very expensive.","These shoes are very expensive."],a:1,x:"\"shoes\" là danh từ số nhiều → dùng \"are\", không phải \"is\"."},
+ {q:"Câu nào đúng?",o:["How much does it costs?","How much does it cost?"],a:1,x:"Sau trợ động từ \"does\", động từ chính không thêm -s."},
+ {q:"Câu nào đúng?",o:["I payed for the shirt.","I paid for the shirt."],a:1,x:"\"pay\" bất quy tắc: pay → paid (không phải \"payed\")."},
+ {q:"Câu nào đúng?",o:["She spend too much money.","She spends too much money."],a:1,x:"Ngôi 3 số ít (she), hiện tại đơn → thêm -s: spends."},
+ {q:"Câu nào đúng?",o:["I'm looking the blue bag.","I'm looking for the blue bag."],a:1,x:"\"look for\" là cụm từ — luôn cần \"for\", không thể bỏ."},
+ {q:"Câu nào đúng?",o:["I want the another size.","I want another size."],a:1,x:"\"another\" đã chứa nghĩa \"a/an\" — không thêm \"the\" trước."},
+ {q:"Câu nào đúng?",o:["It discount 20%.","It is 20% off."],a:1,x:"\"discount\" là danh từ/động từ — không dùng như tính từ. Nói đúng: \"It is 20% off\" hoặc \"There is a 20% discount.\""}
+];
+const SITUATION_Q=[
+ {vi:"🛒 Bạn đang ở cửa hàng, thấy một sản phẩm trên điện thoại và muốn hỏi xem họ có bán không.",q:"Bạn chỉ vào màn hình và nói:",o:["\"I see this phone.\"","\"Excuse me, do you carry this item? I saw it online.\"","\"Give me that.\"","\"I need phone item.\""],a:1,x:"\"Do you carry this item?\" = hỏi cửa hàng có loại hàng đó không — tự nhiên và lịch sự."},
+ {vi:"🗺️ Bạn cần nhân viên chỉ đường đến khu quần áo nữ.",q:"Bạn hỏi:",o:["\"Where woman clothes?\"","\"Could you show me where the women's section is, please?\"","\"Woman area, where?\"","\"I need go woman clothes.\""],a:1,x:"\"Could you show me where … is?\" = yêu cầu chỉ đường lịch sự. \"Section\" = khu vực trong cửa hàng."},
+ {vi:"💸 Giá trên nhãn là 150.000đ nhưng họ tính bạn 200.000đ.",q:"Bạn nói:",o:["\"You bad! Wrong price!\"","\"I think there's a mistake on my bill – the price tag says 150,000 dong.\"","\"Price wrong. Give me money.\"","\"This price is not correct.\""],a:1,x:"\"I think there's a mistake on my bill\" = phản ánh lịch sự khi bị tính sai, tránh gây xung đột."},
+ {vi:"💰 Bạn đưa tờ 200.000đ nhưng nhân viên thối lại như thể bạn đưa 100.000đ.",q:"Bạn nói:",o:["\"You steal my money!\"","\"Excuse me, I think you gave me the wrong change. I paid with 200,000 dong.\"","\"Money wrong. Give more money.\"","\"I give big. You give small.\""],a:1,x:"\"I think you gave me the wrong change\" = nói rõ và lịch sự về tiền thối sai."},
+ {vi:"👕 Chiếc áo bạn thích không có sẵn size của bạn trên kệ.",q:"Bạn nhờ nhân viên kiểm tra:",o:["\"Do you have more size?\"","\"Could you check if you have this in a medium, please?\"","\"Medium size! Find it!\"","\"I need size. Check it.\""],a:1,x:"\"Could you check if you have this in a …?\" = yêu cầu lịch sự, đầy đủ."},
+ {vi:"💵 Bạn muốn hỏi cửa hàng có nhận tiền mặt không.",q:"Bạn hỏi:",o:["\"Cash here?\"","\"You take money?\"","\"Do you accept cash, or do I need to pay by card?\"","\"I no have card. Cash okay?\""],a:2,x:"\"Do you accept cash?\" = cách hỏi trực tiếp và lịch sự nhất. Có thể thêm về thẻ để rõ hơn."}
+];
+
+const PASSAGE_TITLE="Shopping in Vietnam: Old Markets and New Habits";
+const PASSAGE_PARAS=[
+ "Shopping habits in Vietnam have changed a great deal over the past decade. In the past, most people bought everyday items at local wet markets, where sellers displayed fresh vegetables, meat, and clothes all in one place. Customers always paid in cash, and it was perfectly normal to negotiate the price and ask for a small discount.",
+ "Today, shopping malls and supermarkets are popular in big cities. They offer a wide range of products on sale with clear price tags, so there is no need to compare prices by asking the seller directly. Payment is simple – customers can pay in cash, or use a debit card or credit card at the checkout. They always receive a receipt, which makes it easy to return or exchange items.",
+ "Online shopping has grown even faster. Apps allow customers to compare prices across dozens of stores in just a few seconds, find discount codes, and order from home. Many items arrive within one day. However, there are some disadvantages: you cannot try on clothes before you buy them, and returning goods can sometimes take time and effort.",
+ "Many young Vietnamese shoppers say they prefer online shopping because it saves money and time. But older shoppers still enjoy going to markets and malls, where they can touch the products and speak to real people. Whether they shop online or in store, one thing has not changed: everyone still loves a good promotion."
+];
+const READING_Q=[
+ {q:"How did customers usually pay at traditional markets?",o:["By debit card","In cash","By credit card"],a:1,x:"Bài đọc: tại chợ truyền thống, khách hàng luôn trả bằng tiền mặt."},
+ {q:"What is one advantage of shopping at malls?",o:["You can negotiate prices","You always get a receipt","Products are free"],a:1,x:"Malls luôn cung cấp biên lai — tiện khi cần đổi hoặc trả hàng."},
+ {q:"What can shopping apps help customers do quickly?",o:["Try on clothes","Return goods","Compare prices across many stores"],a:2,x:"Ứng dụng giúp so sánh giá từ hàng chục cửa hàng chỉ trong vài giây."},
+ {q:"What is one disadvantage of online shopping in the passage?",o:["You can't pay by card","You can't try on clothes before buying","Products are always expensive"],a:1,x:"Bất tiện: không thể thử quần áo trước khi mua."},
+ {q:"Why do many young people prefer online shopping?",o:["Because stores are closed","Because it saves money and time","Because they can negotiate"],a:1,x:"Người trẻ thích mua online vì tiết kiệm tiền và thời gian."},
+ {q:"What do all shoppers – online or in-store – still love?",o:["Paying in cash","A good promotion","Negotiating prices"],a:1,x:"Câu cuối bài: dù mua online hay tại cửa hàng, ai cũng thích khuyến mãi tốt."}
+];
+
+const SPEAK_Q=["Do you agree that online shopping is more convenient than shopping in a store? Give at least 2 reasons and use vocabulary from this lesson."];
+const DEBATE_SIDES=[
+ {side:'Đồng ý (Online shopping) 👍',color:'var(--ok)',colorSoft:'var(--okSoft)',points:['Saves time – no travel needed','Easy to compare prices across many stores','Available 24/7 – shop anytime','Often cheaper: discount codes & no parking cost','Wide variety – find rare or specific items']},
+ {side:'Không đồng ý (In-store) 👎',color:'var(--coral)',colorSoft:'var(--coralSoft)',points:["Can't try on clothes or check quality before buying","Delivery delays or wrong/damaged item","Returns take time and effort","Miss the in-person shopping experience","Easy to overspend – add to cart without thinking"]}
+];
+
+/* ================= HELPERS ================= */
+const $ = s=>document.querySelector(s);
+function h(tag,attrs={},html){const e=document.createElement(tag);for(const k in attrs){if(k==='class')e.className=attrs[k];else e.setAttribute(k,attrs[k]);}if(html!=null)e.innerHTML=html;return e;}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function toast(msg,ms=3800){const t=$('#toast');t.textContent=msg;t.style.display='block';clearTimeout(toast._t);toast._t=setTimeout(()=>t.style.display='none',ms);}
+function skey(k){return 'clq:'+LESSON+':'+k;}
+function store(k,v){try{localStorage.setItem(skey(k),JSON.stringify(v));}catch(e){}}
+function load(k,d){try{const v=localStorage.getItem(skey(k));return v?JSON.parse(v):d;}catch(e){return d;}}
+
+/* ============ TEXT NORMALIZE ============ */
+const CONTR={"i'd":"i would","i'm":"i am","it's":"it is","couldn't":"could not","can't":"cannot","don't":"do not","didn't":"did not","wasn't":"was not","i've":"i have","we're":"we are","that's":"that is","doesn't":"does not","isn't":"is not"};
+function normWord(w){
+  w=w.toLowerCase().replace(/[’`]/g,"'").replace(/[^a-z0-9']/g,'');
+  if(!w)return[];
+  if(CONTR[w])return CONTR[w].split(' ');
+  w=w.replace(/'/g,'');
+  return w?[w]:[];
+}
+
+/* ================= TTS ================= */
+let VOICES=[],EN_VOICE=null;
+const synth=window.speechSynthesis;
+function rankVoice(v){
+  if(!/^en/i.test(v.lang))return -1;let s=0;const n=v.name;
+  if(/en[-_](US|GB)/i.test(v.lang))s+=10;
+  if(/Natural|Neural|Online|Premium|Enhanced/i.test(n))s+=30;
+  if(/Google/i.test(n))s+=18;
+  if(/Samantha|Ava|Allison|Serena|Daniel|Karen|Moira|Aria|Jenny|Guy|Libby|Sonia|Emma|Brian|Ryan/i.test(n))s+=15;
+  if(/Fred|Albert|Bad News|Bells|Boing|Bubbles|Cellos|Jester|Organ|Trinoids|Whisper|Zarvox|Wobble|Superstar|Junior|Ralph|Kathy|Grandma|Grandpa|Rocko|Shelley|Flo|Eddy|Reed|Sandy/i.test(n))s-=40;
+  return s;
+}
+function loadVoices(){
+  if(!synth)return;
+  VOICES=synth.getVoices();
+  const en=VOICES.filter(v=>rankVoice(v)>=0).sort((a,b)=>rankVoice(b)-rankVoice(a));
+  const sel=$('#voiceSel');const saved=load('voice',null);
+  if(!en.length){sel.innerHTML='<option>Không có giọng tiếng Anh</option>';return;}
+  sel.innerHTML=en.map((v,i)=>`<option value="${i}">${esc(v.name)} (${v.lang})</option>`).join('');
+  let idx=0;if(saved){const k=en.findIndex(v=>v.name===saved);if(k>=0)idx=k;}
+  sel.value=idx;EN_VOICE=en[idx];
+  sel.onchange=()=>{EN_VOICE=en[+sel.value];store('voice',EN_VOICE.name);speak('Hello! Let us practise together.');};
+}
+if(synth){loadVoices();synth.onvoiceschanged=loadVoices;}
+function rate(){return +$('#rate').value;}
+$('#rate').value=load('rate',0.9);$('#rateV').textContent=$('#rate').value;
+$('#rate').oninput=e=>{$('#rateV').textContent=e.target.value;store('rate',+e.target.value);};
+function speak(text){
+  if(!synth){toast('Trình duyệt này không đọc được âm thanh. Hãy dùng Chrome hoặc Safari.');return;}
+  synth.cancel();
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang=EN_VOICE?EN_VOICE.lang:'en-US';if(EN_VOICE)u.voice=EN_VOICE;u.rate=rate();u.pitch=1;
+  setTimeout(()=>synth.speak(u),40);
+}
+function stopSpeak(){synth&&synth.cancel();}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-say]');if(b)speak(b.dataset.say);});
+
+/* ================= RECORDING ENGINE (dung chung) ================= */
+const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+const RESULTS=load('results',{});
+const BLOBS={};
+let STREAM=null,ACTIVE=null;
+async function getStream(){if(STREAM&&STREAM.active)return STREAM;STREAM=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true}});return STREAM;}
+function pickMime(){if(!window.MediaRecorder)return'';for(const m of['audio/webm;codecs=opus','audio/mp4','audio/webm','audio/ogg'])if(MediaRecorder.isTypeSupported&&MediaRecorder.isTypeSupported(m))return m;return'';}
+async function startRec(ctx){
+  if(ACTIVE){const same=ACTIVE.ctx===ctx;stopRec();if(same)return;}
+  stopSpeak();
+  if(!navigator.mediaDevices||!window.MediaRecorder){ctx.ui.msg('Trình duyệt này chưa ghi âm được. Hãy mở bài bằng Chrome (máy tính/Android) hoặc Safari (iPhone).');return;}
+  let s;try{s=await getStream();}catch(e){ctx.ui.msg('Chưa mở được micro. Bấm vào biểu tượng 🔒 trên thanh địa chỉ → cho phép Micro, rồi thử lại.');return;}
+  const mime=pickMime();let mr;try{const o={audioBitsPerSecond:48000};if(mime)o.mimeType=mime;mr=new MediaRecorder(s,o);}catch(e){mr=new MediaRecorder(s);}
+  const st={ctx,mr,chunks:[],finals:[],interim:'',t0:Date.now(),stopping:false,mrDone:false,recDone:!SR};
+  mr.ondataavailable=e=>{if(e.data&&e.data.size)st.chunks.push(e.data);};
+  mr.onstop=()=>{st.blob=new Blob(st.chunks,{type:mr.mimeType||'audio/webm'});st.mrDone=true;finish(st);};
+  if(SR){
+    const r=new SR();r.lang='en-US';r.continuous=true;r.interimResults=true;r.maxAlternatives=1;
+    r.onresult=e=>{let inter='';for(let i=e.resultIndex;i<e.results.length;i++){const res=e.results[i];if(res.isFinal)st.finals.push(res[0].transcript);else inter+=res[0].transcript;}st.interim=inter;ctx.ui.live((st.finals.join(' ')+' '+inter).trim());};
+    r.onerror=e=>{if(['not-allowed','service-not-allowed','network','audio-capture','language-not-supported'].includes(e.error))st.srFail=true;};
+    r.onend=()=>{if(!st.stopping&&!st.srFail){try{r.start();}catch(_){}}else{st.recDone=true;finish(st);}};
+    st.r=r;try{r.start();}catch(_){st.srFail=true;st.recDone=true;}
+  }
+  mr.start();ACTIVE=st;ctx.ui.setRec(true);
+  st.tick=setInterval(()=>{const sec=(Date.now()-st.t0)/1000;ctx.ui.tick(sec);if(sec>=ctx.maxSec)stopRec();},250);
+}
+function stopRec(){
+  const st=ACTIVE;if(!st)return;ACTIVE=null;st.stopping=true;clearInterval(st.tick);st.dur=(Date.now()-st.t0)/1000;
+  st.ctx.ui.setRec(false);st.ctx.ui.live('Đang xử lý…');
+  try{st.mr.stop();}catch(_){}
+  if(st.r&&!st.recDone){try{st.r.stop();}catch(_){}setTimeout(()=>{st.recDone=true;finish(st);},2500);}
+}
+function finish(st){
+  if(st.done||!st.mrDone||!st.recDone)return;st.done=true;
+  const c=st.ctx;const transcript=(st.finals.join(' ')+' '+(st.interim||'')).trim();
+  BLOBS[c.key]=st.blob;
+  const useSR=SR&&!st.srFail;
+  const r={label:c.label,target:c.target,transcript,dur:Math.round(st.dur*10)/10,score:null,t:Date.now()};
+  RESULTS[c.key]=r;store('results',RESULTS);
+  c.ui.done(r,useSR);
+}
+function openSpeakCard(opts){
+  const {key,label,target,maxSec,vi,extraHtml,fileBaseVal}=opts;
+  const card=h('div',{class:'card'});
+  card.innerHTML=`<div class="qt"><span><b>${esc(label)}</b></span></div>
+    <div class="tip" style="font-size:15px">${esc(vi)}</div>
+    ${extraHtml||''}
+    <div class="pr-btns" style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:8px">
+      <button class="b rec" data-a="rec">🎙 Ghi âm</button>
+      <button class="b" data-a="play" disabled>▶ Nghe lại</button>
+      <button class="b primary" data-a="send" disabled>📨 Gửi</button>
+      <span class="timer"></span><span class="cl"></span></div>
+    <div class="tip" style="color:var(--muted)">💡 Ghi âm lại thoải mái — chỉ gửi cho thầy/cô khi em bấm <b>Gửi</b>.</div>
+    <div class="live"></div><div class="res"></div>`;
+  const recB=card.querySelector('[data-a=rec]'),playB=card.querySelector('[data-a=play]'),sendB=card.querySelector('[data-a=send]'),timer=card.querySelector('.timer'),live=card.querySelector('.live'),res=card.querySelector('.res'),clEl=card.querySelector('.cl');
+  let audio=null;
+  const ctx={key,label,target,maxSec,ui:{
+    setRec(on){recB.classList.toggle('on',on);recB.innerHTML=on?'■ Dừng':'🎙 Ghi âm';if(on){res.innerHTML='';live.textContent=SR?'Đang nghe em nói…':'Đang ghi âm…';}else timer.textContent='';},
+    tick(sec){timer.textContent=Math.floor(sec)+'s / '+ctx.maxSec+'s';},
+    live(t){live.textContent=t;},
+    msg(t){live.textContent='';res.innerHTML=`<div class="tip">⚠️ ${esc(t)}</div>`;},
+    done(r,useSR){live.textContent='';
+      res.innerHTML=`<div class="tip">✅ Đã ghi âm (${r.dur}s).${useSR&&r.transcript?' Máy nghe được: <i>'+esc(r.transcript)+'</i>':''}</div><div class="tip">💡 Chưa ưng ý? Bấm 🎙 Ghi âm để nói lại. Ưng ý rồi thì bấm 📨 Gửi.</div>`;
+      playB.disabled=!BLOBS[key];sendB.disabled=!BLOBS[key];
+      clEl.className='cl sent-wait';clEl.textContent='🎙 Chưa gửi — bấm "Gửi" khi em hài lòng';},
+    cloud(state){clEl.className='cl '+(state==='ok'?'sent-ok':state==='bad'?'sent-bad':'sent-wait');clEl.textContent=state==='ok'?'✅ Đã gửi thầy/cô':state==='bad'?'⚠️ Chưa gửi được, đang thử lại…':'☁️ Đang gửi…';}
+  }};
+  function getAudio(){if(!BLOBS[key])return null;if(audio&&audio._blob===BLOBS[key])return audio;audio=new Audio(URL.createObjectURL(BLOBS[key]));audio._blob=BLOBS[key];return audio;}
+  card.addEventListener('click',e=>{
+    const b=e.target.closest('[data-a]');if(!b)return;const a=b.dataset.a;
+    if(a==='rec')startRec(ctx);
+    if(a==='play'){const au=getAudio();if(au){stopSpeak();au.currentTime=0;au.play();}}
+    if(a==='send'){
+      if(!BLOBS[key]){toast('Em chưa ghi âm câu này.');return;}
+      sendB.disabled=true;
+      enqueueUpload(key,BLOBS[key],RESULTS[key],ctx.ui.cloud,'',fileBaseVal);
+    }
+  });
+  if(RESULTS[key]){const r=RESULTS[key];res.innerHTML=`<div class="tip">✅ Đã ghi âm (${r.dur}s).${r.transcript?' Máy nghe được: <i>'+esc(r.transcript)+'</i>':''}</div>`;
+    playB.disabled=!BLOBS[key];sendB.disabled=true;
+    if(r.sent){clEl.className='cl sent-ok';clEl.textContent='✅ Đã gửi thầy/cô';}
+    else if(BLOBS[key]){sendB.disabled=false;clEl.className='cl sent-wait';clEl.textContent='🎙 Chưa gửi — bấm "Gửi" khi em hài lòng';}}
+  return card;
+}
+
+/* ================= BUOC 1: TU VUNG ================= */
+const PROGRESS=load('progress',{step1:false,step2:false,step3:false,step4:false,step5:false,played:[]});
+
+/* count how many per-word recordings have been sent */
+function vocabRecsSentCount(){let n=0;VOCAB_FLAT.forEach((_,i)=>{if(RESULTS['v_'+i]&&RESULTS['v_'+i].sent)n++;});return n;}
+
+/* lightweight per-word recorder: record → listen → compare TTS → send */
+function makeWordRec(idx,sayText,wordLabel){
+  const key='v_'+idx;
+  const wrap=h('div',{});
+  const row=h('div',{class:'vrec-row'});
+  const recB=h('button',{class:'b rec sm','data-a':'rec'},'🎙 Ghi âm');
+  const playB=h('button',{class:'b sm','data-a':'play',disabled:''},'▶ Nghe lại');
+  const ttsB=h('button',{class:'b sm','data-say':sayText},'🔊 So sánh');
+  const sendB=h('button',{class:'b primary sm','data-a':'send',disabled:''},'📤 Gửi');
+  const timerEl=h('span',{class:'timer'},'');
+  const statusEl=h('span',{class:'vstatus'},'');
+  const liveEl=h('div',{class:'vrec-live'},'');
+  [recB,playB,ttsB,sendB,timerEl,statusEl].forEach(el=>row.appendChild(el));
+  wrap.appendChild(row);wrap.appendChild(liveEl);
+  let audio=null;
+  const ctx={key,label:'Từ vựng: '+wordLabel,target:wordLabel,maxSec:15,ui:{
+    setRec(on){recB.classList.toggle('on',on);recB.innerHTML=on?'■ Dừng':'🎙 Ghi âm';if(on){liveEl.textContent=SR?'Đang nghe…':'Đang ghi âm…';}else timerEl.textContent='';},
+    tick(sec){timerEl.textContent=Math.floor(sec)+'s';},
+    live(t){liveEl.textContent=t;},
+    msg(t){liveEl.textContent='';liveEl.innerHTML='⚠️ '+esc(t);},
+    done(r,useSR){liveEl.textContent='✅ '+r.dur+'s'+(useSR&&r.transcript?' — '+r.transcript:'');
+      playB.disabled=!BLOBS[key];sendB.disabled=!BLOBS[key];
+      statusEl.className='vstatus sent-wait';statusEl.textContent='chưa gửi';},
+    cloud(state){statusEl.className='vstatus '+(state==='ok'?'sent-ok':state==='bad'?'sent-bad':'sent-wait');
+      statusEl.textContent=state==='ok'?'✅ Đã gửi':state==='bad'?'⚠️ Lỗi':'☁️ Đang gửi…';
+      if(state==='ok'){/* update badge */const badge=document.querySelector('[data-vbadge="'+idx+'"]');if(badge)badge.textContent='✅ Đã gửi';recalcProgress();}}
+  }};
+  function getAudio(){if(!BLOBS[key])return null;if(audio&&audio._blob===BLOBS[key])return audio;audio=new Audio(URL.createObjectURL(BLOBS[key]));audio._blob=BLOBS[key];return audio;}
+  wrap.addEventListener('click',e=>{
+    const b=e.target.closest('[data-a]');if(!b||b.closest('[data-say]')&&b.dataset.say)return;
+    const a=b.dataset.a;
+    if(a==='rec')startRec(ctx);
+    if(a==='play'){const au=getAudio();if(au){stopSpeak();au.currentTime=0;au.play();}}
+    if(a==='send'){
+      if(!BLOBS[key]){toast('Em chưa ghi âm từ này.');return;}
+      sendB.disabled=true;
+      const fbase='vocab-'+String(idx+1).padStart(2,'0')+'-'+sayText.replace(/[^a-zA-Z0-9]/g,'-').slice(0,20);
+      enqueueUpload(key,BLOBS[key],RESULTS[key],ctx.ui.cloud,'',fbase);
+    }
+  });
+  /* restore saved state */
+  if(RESULTS[key]){const r=RESULTS[key];
+    liveEl.textContent='✅ '+r.dur+'s'+(r.transcript?' — '+r.transcript:'');
+    if(r.sent){statusEl.className='vstatus sent-ok';statusEl.textContent='✅ Đã gửi';}
+    else{statusEl.className='vstatus sent-wait';statusEl.textContent='chưa gửi';sendB.disabled=false;}}
+  return wrap;
+}
+
+function renderS1(){
+  const box=$('#s1Groups');box.innerHTML='';
+  let idx=0;
+  VOCAB_GROUPS.forEach(g=>{
+    const wrap=h('div',{class:'card'});
+    wrap.innerHTML=`<h3 style="margin-top:0">${esc(g.group)}</h3>`;
+    g.items.forEach(it=>{
+      const i=idx++;
+      const played=PROGRESS.played.includes(i);
+      const sent=RESULTS['v_'+i]&&RESULTS['v_'+i].sent;
+      const badge=sent?'✅ Đã gửi':(played?'🔊 Đã nghe':'🆕 Mới');
+      const card=h('div',{class:'vcard-rich'});
+      /* head */
+      const head=h('div',{class:'vrich-head'});
+      head.innerHTML=`<span class="vrich-word">${esc(it.en)}</span><span class="vrich-ipa">${esc(it.ipa)}</span><span class="vrich-badge" data-vbadge="${i}">${badge}</span>`;
+      card.appendChild(head);
+      /* Vietnamese */
+      const vi=h('div',{class:'vrich-vi'});vi.textContent=it.vi;card.appendChild(vi);
+      /* Pronunciation warning */
+      if(it.warn){const w=h('div',{class:'vrich-warn'});w.textContent=it.warn;card.appendChild(w);}
+      /* Word expansion chips */
+      if(it.expand&&it.expand.length){
+        const ex=h('div',{class:'vrich-expand'});
+        ex.innerHTML='🔗 Mở rộng: '+it.expand.map(e=>`<button class="vrich-chip" data-say="${esc(e)}">${esc(e)}</button>`).join('');
+        card.appendChild(ex);
+      }
+      /* Example sentence */
+      const ex=h('div',{class:'vrich-ex'});
+      const parts=it.ex.split(/(\bA:\s*|\bB:\s*)/);
+      ex.textContent=it.ex;
+      card.appendChild(ex);
+      /* Listen + record row */
+      const listenRow=h('div',{style:'display:flex;gap:6px;align-items:center;margin-bottom:6px;flex-wrap:wrap'});
+      const listenBtn=h('button',{class:'b sm vplay','data-say':esc(it.say||it.en),'data-vkey':String(i)});
+      listenBtn.innerHTML='🔊 Nghe từ';
+      listenRow.appendChild(listenBtn);
+      card.appendChild(listenRow);
+      /* per-word recorder */
+      card.appendChild(makeWordRec(i,it.say||it.en,it.en));
+      wrap.appendChild(card);
+    });
+    box.appendChild(wrap);
+  });
+}
+renderS1();
+
+/* mark as played on 🔊 click — update badge in place without full re-render */
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-vkey]');if(!b)return;const i=+b.dataset.vkey;
+  if(!PROGRESS.played.includes(i)){
+    PROGRESS.played.push(i);store('progress',PROGRESS);
+    const badge=document.querySelector('[data-vbadge="'+i+'"]');
+    if(badge&&badge.textContent==='🆕 Mới')badge.textContent='🔊 Đã nghe';
+    recalcProgress();
+  }
+});
+
+$('#s1Next').onclick=()=>{
+  if(PROGRESS.played.length<VOCAB_FLAT.length){toast('Em bấm nghe hết 28 từ nhé (còn thiếu '+(VOCAB_FLAT.length-PROGRESS.played.length)+' từ).');return;}
+  const sent=vocabRecsSentCount();
+  if(sent<5){toast('Em ghi âm và gửi ít nhất 5 từ cho thầy/cô nhé (đã gửi '+sent+'/5).');return;}
+  gotoStep('s2');
+};
+
+/* ================= GENERIC MC QUIZ ================= */
+function renderMC(boxSel,items,answers,onPick){
+  const box=$(boxSel);
+  box.innerHTML=items.map((it,i)=>{
+    const picked=answers[i];
+    const opts=it.o.map((opt,oi)=>{
+      let cls='qopt';
+      if(picked!=null){
+        if(oi===it.a)cls+=' correct';
+        else if(oi===picked)cls+=' wrong';
+      }
+      return `<button class="${cls}" data-qi="${i}" data-oi="${oi}">${esc(opt)}</button>`;
+    }).join('');
+    const fb=picked!=null?`<div class="qfb ${picked===it.a?'ok':'bad'}">${picked===it.a?'✅ Đúng!':'❌ Chưa đúng.'} ${esc(it.x||'')}</div>`:'';
+    return `<div class="qcard"><div class="qq">${i+1}. ${esc(it.q)}</div><div class="qopts">${opts}</div>${fb}</div>`;
+  }).join('');
+  box.onclick=e=>{
+    const b=e.target.closest('[data-qi]');if(!b)return;
+    const qi=+b.dataset.qi,oi=+b.dataset.oi;
+    answers[qi]=oi;
+    onPick();
+    renderMC(boxSel,items,answers,onPick);
+  };
+}
+
+/* ================= BUOC 2: NGU PHAP + SUA LOI ================= */
+const QUIZ=load('quiz',{gram:Array(GRAMMAR_Q.length).fill(null),err:Array(ERROR_Q.length).fill(null),sit:Array(SITUATION_Q.length).fill(null),read:Array(READING_Q.length).fill(null)});
+function gramAllAnswered(){return QUIZ.gram.every(x=>x!=null);}
+function errAllAnswered(){return QUIZ.err.every(x=>x!=null);}
+function step2Done(){return gramAllAnswered()&&errAllAnswered();}
+renderMC('#s2GramBox',GRAMMAR_Q,QUIZ.gram,()=>{store('quiz',QUIZ);if(step2Done()){PROGRESS.step2=true;store('progress',PROGRESS);recalcProgress();}});
+renderMC('#s2ErrBox',ERROR_Q,QUIZ.err,()=>{store('quiz',QUIZ);if(step2Done()){PROGRESS.step2=true;store('progress',PROGRESS);recalcProgress();}});
+$('#s2Next').onclick=()=>{
+  if(!gramAllAnswered()){toast('Em trả lời hết 8 câu ngữ pháp (Phần A) trước nhé.');return;}
+  if(!errAllAnswered()){toast('Em chọn câu đúng cho cả 8 cặp sửa lỗi (Phần B) trước nhé.');return;}
+  gotoStep('s3');
+};
+
+/* ================= BUOC 3: GIAO TIEP THUC TE ================= */
+function sitAllAnswered(){return QUIZ.sit.every(x=>x!=null);}
+renderMC('#s3Box',SITUATION_Q,QUIZ.sit,()=>{store('quiz',QUIZ);if(sitAllAnswered()){PROGRESS.step3=true;store('progress',PROGRESS);recalcProgress();}});
+$('#s3Next').onclick=()=>{
+  if(sitAllAnswered())gotoStep('s4');
+  else toast('Em chọn câu đúng cho cả 6 tình huống trước nhé.');
+};
+
+/* ================= BUOC 4: DOC HIEU ================= */
+(function(){
+  $('#passageBox').innerHTML=`<p><b>${esc(PASSAGE_TITLE)}</b></p>`+PASSAGE_PARAS.map(p=>`<p>${esc(p)}</p>`).join('');
+  $('#playPassage').onclick=()=>speak(PASSAGE_PARAS.join(' '));
+})();
+function readAllAnswered(){return QUIZ.read.every(x=>x!=null);}
+renderMC('#s4Box',READING_Q,QUIZ.read,()=>{store('quiz',QUIZ);if(readAllAnswered()){PROGRESS.step4=true;store('progress',PROGRESS);recalcProgress();}});
+$('#s4Next').onclick=()=>{
+  if(readAllAnswered())gotoStep('s5');
+  else toast('Em trả lời hết 6 câu đọc hiểu trước nhé.');
+};
+
+/* ================= BUOC 5: TRANH LUAN ================= */
+(function(){
+  // Brainstorm cards
+  const sidesBox=$('#debateSides');
+  DEBATE_SIDES.forEach(s=>{
+    const col=h('div',{});
+    col.innerHTML=`<div style="background:${s.colorSoft};border:2px solid ${s.color};border-radius:12px;padding:10px 12px"><b style="color:${s.color}">${esc(s.side)}</b><ul style="margin:8px 0 0;padding-left:18px;font-size:14px">${s.points.map(p=>`<li style="margin-bottom:4px">${esc(p)}</li>`).join('')}</ul></div>`;
+    sidesBox.appendChild(col);
+  });
+  // Writing textarea word count
+  const ta=$('#debateWrite');
+  const wc=$('#writeCount');
+  const savedWrite=load('debateWrite','');
+  if(savedWrite)ta.value=savedWrite;
+  wc.textContent=savedWrite.trim()?savedWrite.trim().split(/\s+/).length:0;
+  ta.oninput=()=>{const words=ta.value.trim()?ta.value.trim().split(/\s+/).length:0;wc.textContent=words;store('debateWrite',ta.value);};
+  // Speaking card
+  $('#speakQBox').innerHTML='<h3 style="margin-top:0">🎙 Câu hỏi tranh luận:</h3><p>'+esc(SPEAK_Q[0])+' <button class="b sm" data-say="'+esc(SPEAK_Q[0])+'">🔊</button></p>';
+  $('#s5CardBox').appendChild(openSpeakCard({key:'speak',label:'Ghi âm ý kiến tranh luận (45–60 giây)',target:'debate: online vs in-store shopping',maxSec:65,vi:'Đồng ý hay không đồng ý? Trả lời bằng tiếng Anh, đưa ra ít nhất 2 lý do, dùng từ vựng ở Bước 1.',fileBaseVal:'5-Tranh-Luan'}));
+})();
+$('#s5Next').onclick=()=>{
+  if(PROGRESS.step5)gotoStep('send');
+  else toast('Em ghi âm và bấm 📨 Gửi câu trả lời ở Bước 5 trước nhé.');
+};
+
+/* ================= STEPPER / KHOA TIEN DO ================= */
+const STEPS=[
+ {id:'s1',key:'step1',label:'1️⃣ Từ vựng'},
+ {id:'s2',key:'step2',label:'2️⃣ Ngữ pháp'},
+ {id:'s3',key:'step3',label:'3️⃣ Giao tiếp'},
+ {id:'s4',key:'step4',label:'4️⃣ Đọc hiểu'},
+ {id:'s5',key:'step5',label:'5️⃣ Tranh luận'},
+ {id:'send',key:null,label:'📨 Nộp bài'}
+];
+let CURRENT='s1';
+function canOpen(id){
+  if(id==='s1')return true;
+  if(id==='s2')return PROGRESS.step1;
+  if(id==='s3')return PROGRESS.step2;
+  if(id==='s4')return PROGRESS.step3;
+  if(id==='s5')return PROGRESS.step4;
+  if(id==='send')return PROGRESS.step5;
+  return false;
+}
+function lockMsg(id){
+  if(id==='s2')return 'Em cần nghe hết 28 từ + gửi ít nhất 5 bản ghi âm từ vựng ở Bước 1 trước.';
+  if(id==='s3')return 'Em cần hoàn thành Phần A (ngữ pháp) và Phần B (sửa lỗi) ở Bước 2 trước.';
+  if(id==='s4')return 'Em cần chọn câu đúng cho cả 6 tình huống giao tiếp ở Bước 3 trước.';
+  if(id==='s5')return 'Em cần trả lời hết 6 câu đọc hiểu ở Bước 4 trước.';
+  if(id==='send')return 'Em cần ghi âm và gửi phần tranh luận ở Bước 5 trước.';
+  return '';
+}
+function renderStepper(){
+  const nav=$('#stepperNav');nav.innerHTML='';
+  const doneCount=['step1','step2','step3','step4','step5'].filter(k=>PROGRESS[k]).length;
+  const pct=Math.round(doneCount/5*100);
+  $('#pbarInner').style.width=pct+'%';
+  $('#pbarPct').textContent=doneCount+'/5 bước hoàn thành ('+pct+'%)';
+  STEPS.forEach(s=>{
+    const allowed=canOpen(s.id);
+    const done=s.key?PROGRESS[s.key]:false;
+    const pill=h('button',{class:'step-pill'+(allowed?'':' locked')+(done?' done':'')+(CURRENT===s.id?' current':'')});
+    pill.innerHTML=(done?'✅ ':(allowed?'':'🔒 '))+esc(s.label);
+    pill.onclick=()=>gotoStep(s.id);
+    nav.appendChild(pill);
+  });
+}
+function gotoStep(id){
+  if(!canOpen(id)){toast(lockMsg(id));return;}
+  CURRENT=id;
+  document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id==='p-'+id));
+  stopSpeak();if(ACTIVE)stopRec();
+  renderStepper();
+  if(id==='send')renderSummary();
+}
+function recalcProgress(){
+  PROGRESS.step1=PROGRESS.played.length>=VOCAB_FLAT.length&&vocabRecsSentCount()>=5;
+  PROGRESS.step2=step2Done();
+  PROGRESS.step3=sitAllAnswered();
+  PROGRESS.step4=readAllAnswered();
+  PROGRESS.step5=!!(RESULTS['speak']&&RESULTS['speak'].sent);
+  store('progress',PROGRESS);
+  renderStepper();
+}
+recalcProgress();
+
+/* ================= NOP BAI ================= */
+const HAS_URL=/^https:\/\/script\.google(usercontent)?\.com\//.test(SCRIPT_URL);
+if(!HAS_URL)$('#noUrl').hidden=false;
+function stuName(){return ($('#stuName').value||load('name','')).trim();}
+async function toMp3(blob){
+  if(!window.lamejs)return null;
+  const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return null;
+  const ac=new AC();
+  try{
+    const buf=await new Promise((res,rej)=>{blob.arrayBuffer().then(ab=>ac.decodeAudioData(ab,res,rej)).catch(rej);});
+    const rate=22050;const len=Math.ceil(buf.duration*rate);
+    const off=new OfflineAudioContext(1,len,rate);const src=off.createBufferSource();src.buffer=buf;src.connect(off.destination);src.start();
+    const out=await off.startRendering();const f=out.getChannelData(0);
+    const pcm=new Int16Array(f.length);for(let i=0;i<f.length;i++){const v=Math.max(-1,Math.min(1,f[i]));pcm[i]=v<0?v*0x8000:v*0x7FFF;}
+    const enc=new lamejs.Mp3Encoder(1,rate,48);const parts=[];
+    for(let i=0;i<pcm.length;i+=1152){const b=enc.encodeBuffer(pcm.subarray(i,i+1152));if(b.length)parts.push(new Uint8Array(b));}
+    const e=enc.flush();if(e.length)parts.push(new Uint8Array(e));
+    return new Blob(parts,{type:'audio/mpeg'});
+  }catch(err){return null;}finally{try{ac.close();}catch(_){}}
+}
+function b64(blob){return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(String(r.result).split(',')[1]);r.onerror=rej;r.readAsDataURL(blob);});}
+async function postJSON(obj){
+  const body=JSON.stringify(obj);
+  try{
+    const r=await fetch(SCRIPT_URL,{method:'POST',body,headers:{'Content-Type':'text/plain;charset=utf-8'},redirect:'follow'});
+    const j=await r.json();if(!j.ok)throw new Error(j.error||'fail');return j;
+  }catch(err){
+    if(err instanceof TypeError){
+      await fetch(SCRIPT_URL,{method:'POST',body,mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'}});return {ok:true};
+    }
+    throw err;
+  }
+}
+const QUEUE=[];let BUSY=false;const UI_CB={};
+function updateCloud(){const el=$('#cloud');const n=QUEUE.length+(BUSY?1:0);
+  if(n){el.hidden=false;el.textContent='☁️ Đang gửi '+n+' bản ghi âm cho thầy/cô…';}
+  else if(updateCloud.sent){el.hidden=false;el.textContent='✅ Đã gửi '+updateCloud.sent+' bản ghi âm';}
+  else el.hidden=true;}
+updateCloud.sent=0;
+function enqueueUpload(key,blob,r,cb,typed,fileBaseVal){
+  if(!HAS_URL)return;
+  UI_CB[key]=cb;cb&&cb('wait');
+  const i=QUEUE.findIndex(q=>q.key===key);const job={key,blob,r,typed:typed||'',tries:0,fileBaseVal:fileBaseVal||('x_'+key)};
+  if(i>=0)QUEUE[i]=job;else QUEUE.push(job);
+  updateCloud();runQueue();
+}
+async function runQueue(){
+  if(BUSY||!QUEUE.length)return;BUSY=true;const job=QUEUE.shift();updateCloud();
+  const cb=UI_CB[job.key];
+  try{
+    let blob=await toMp3(job.blob),ext='mp3',mime='audio/mpeg';
+    if(!blob){blob=job.blob;mime=(blob.type||'audio/webm').split(';')[0];ext=mime.includes('mp4')?'m4a':mime.includes('ogg')?'ogg':'webm';}
+    const heard=job.r.transcript?job.r.transcript:'(không nghe rõ)';
+    const combined='🎤 Máy nghe được: '+heard;
+    await postJSON({type:'audio',name:stuName()||'Không tên',lesson:LESSON,file:job.fileBaseVal+'.'+ext,mime,label:job.r.label,target:job.r.target,transcript:combined,score:job.r.score,dur:job.r.dur,audio:await b64(blob)});
+    RESULTS[job.key].sent=true;store('results',RESULTS);updateCloud.sent++;cb&&cb('ok');
+    try{recalcProgress();}catch(_){}
+  }catch(err){
+    job.tries++;cb&&cb('bad');
+    if(job.tries<6){setTimeout(()=>{if(!QUEUE.some(q=>q.key===job.key))QUEUE.push(job);updateCloud();runQueue();},Math.min(30000,2000*2**job.tries));}
+  }finally{BUSY=false;updateCloud();runQueue();}
+}
+function scoreOf(arr,items){let c=0;arr.forEach((v,i)=>{if(v===items[i].a)c++;});return c+'/'+items.length;}
+function buildSummary(){
+  const details=[];
+  const sentCount=vocabRecsSentCount();
+  details.push({part:'Bước 1 – Từ vựng (nghe)',question:'Số từ đã nghe',answer:PROGRESS.played.length+'/'+VOCAB_FLAT.length,correct:'',result:(PROGRESS.played.length>=VOCAB_FLAT.length?'Đã nghe hết':'Chưa đủ')});
+  details.push({part:'Bước 1 – Ghi âm từ vựng',question:'Số từ đã ghi âm và gửi',answer:sentCount+'/28',correct:'',result:(sentCount>=5?'Đủ điều kiện':'Cần gửi thêm '+(5-sentCount)+' từ')});
+  details.push({part:'Bước 2A – Ngữ pháp',question:'8 câu another/other/same',answer:QUIZ.gram.map((v,i)=>v!=null?GRAMMAR_Q[i].o[v]:'(chưa trả lời)').join(' | '),correct:'',result:scoreOf(QUIZ.gram,GRAMMAR_Q)});
+  details.push({part:'Bước 2B – Sửa lỗi',question:'8 cặp câu',answer:QUIZ.err.map((v,i)=>v!=null?ERROR_Q[i].o[v]:'(chưa trả lời)').join(' | '),correct:'',result:scoreOf(QUIZ.err,ERROR_Q)});
+  details.push({part:'Bước 3 – Giao tiếp thực tế',question:'6 tình huống',answer:QUIZ.sit.map((v,i)=>v!=null?SITUATION_Q[i].o[v]:'(chưa trả lời)').join(' | '),correct:'',result:scoreOf(QUIZ.sit,SITUATION_Q)});
+  details.push({part:'Bước 4 – Đọc hiểu',question:'6 câu hỏi',answer:QUIZ.read.map((v,i)=>v!=null?READING_Q[i].o[v]:'(chưa trả lời)').join(' | '),correct:'',result:scoreOf(QUIZ.read,READING_Q)});
+  const writeText=load('debateWrite','');
+  if(writeText.trim())details.push({part:'Bước 5 – Viết câu hỗ trợ',question:'debate: online vs in-store',answer:writeText.trim().slice(0,200),correct:'',result:(writeText.trim().split(/\s+/).length)+' từ'});
+  const r5=RESULTS['speak'];if(r5)details.push({part:'Bước 5 – Tranh luận (nói)',question:r5.target,answer:r5.transcript||'(đã ghi âm)',correct:'',result:(r5.sent?'đã gửi':'chưa gửi')+' · '+r5.dur+'s'});
+  const doneCount=['step1','step2','step3','step4','step5'].filter(k=>PROGRESS[k]).length;
+  return {summary:{
+    progress:doneCount+'/5 bước ('+Math.round(doneCount/5*100)+'%)',
+    step1:PROGRESS.played.length+'/'+VOCAB_FLAT.length+' từ đã nghe · ghi âm đã gửi: '+sentCount+'/28 từ',
+    step2:'Ngữ pháp: '+scoreOf(QUIZ.gram,GRAMMAR_Q)+' · Sửa lỗi: '+scoreOf(QUIZ.err,ERROR_Q),
+    step3:'Giao tiếp: '+scoreOf(QUIZ.sit,SITUATION_Q),
+    step4:'Đọc hiểu: '+scoreOf(QUIZ.read,READING_Q),
+    step5:r5?((r5.sent?'đã gửi':'chưa gửi')+' · '+r5.dur+'s'):'(chưa ghi âm)'
+  },details};
+}
+function renderSummary(){
+  const r5=RESULTS['speak'];
+  const sentCount=vocabRecsSentCount();
+  const writeText=load('debateWrite','');const wc=writeText.trim()?writeText.trim().split(/\s+/).length:0;
+  const doneCount=['step1','step2','step3','step4','step5'].filter(k=>PROGRESS[k]).length;
+  $('#sumBox').innerHTML=`<div class="tbl"><table>
+   <tr><th>Phần</th><th>Kết quả</th></tr>
+   <tr><td>Tiến độ chung</td><td>${doneCount}/5 bước (${Math.round(doneCount/5*100)}%)</td></tr>
+   <tr><td>1️⃣ Từ vựng (nghe)</td><td>${PROGRESS.played.length}/${VOCAB_FLAT.length} từ đã nghe</td></tr>
+   <tr><td>1️⃣ Ghi âm từ vựng</td><td>${sentCount}/28 từ đã gửi ${sentCount>=5?'✅':'⏳'}</td></tr>
+   <tr><td>2️⃣ Ngữ pháp (another/other)</td><td>${scoreOf(QUIZ.gram,GRAMMAR_Q)}</td></tr>
+   <tr><td>2️⃣ Sửa lỗi thường gặp</td><td>${scoreOf(QUIZ.err,ERROR_Q)}</td></tr>
+   <tr><td>3️⃣ Giao tiếp thực tế</td><td>${scoreOf(QUIZ.sit,SITUATION_Q)}</td></tr>
+   <tr><td>4️⃣ Đọc hiểu</td><td>${scoreOf(QUIZ.read,READING_Q)}</td></tr>
+   <tr><td>5️⃣ Viết câu hỗ trợ</td><td>${wc>0?wc+' từ':'<i>chưa viết</i>'}</td></tr>
+   <tr><td>5️⃣ Tranh luận (nói)</td><td>${r5?((r5.sent?'✅ đã gửi':'⏳ chưa gửi')+' · '+r5.dur+'s'):'<i>chưa ghi âm</i>'}</td></tr>
+   </table></div>`;
+}
+async function sendSummary(quiet){
+  const msg=$('#submitMsg');
+  if(!HAS_URL){msg.textContent='⚙️ Trang chưa được thầy/cô cài link nhận bài.';return;}
+  const name=stuName();if(!name){if(!quiet){toast('Em ghi tên trước nhé.');$('#stuName').focus();}return;}
+  const btn=$('#submitBtn');btn.disabled=true;if(!quiet)btn.textContent='Đang gửi…';
+  try{
+    await postJSON(Object.assign({type:'submit',name,lesson:LESSON},buildSummary()));
+    const pending=QUEUE.length+(BUSY?1:0);
+    msg.innerHTML='✅ <b>Đã nộp bài!</b> Thầy/cô đã nhận được bài của em.'+(pending?' (Còn '+pending+' bản ghi âm đang gửi, em đợi một chút trước khi đóng trang.)':'');
+    if(quiet)toast('✅ Đã gửi tiến trình cho thầy/cô.');else toast('✅ Đã nộp bài cho thầy/cô!',5000);
+  }catch(e){msg.textContent='⚠️ Chưa gửi được (mạng yếu?). Em bấm nộp lại nhé.';}
+  finally{btn.disabled=false;btn.textContent='📨 Nộp bài cho thầy/cô';}
+}
+$('#submitBtn').onclick=()=>sendSummary(false);
+$('#stuName').value=load('name','');$('#stuName').oninput=e=>store('name',e.target.value);
+
+/* ---- hoi ten khi mo bai ---- */
+(function(){
+  const g=$('#gate'),inp=$('#gateName');
+  if(!load('name',''))g.hidden=false;
+  const go=()=>{const v=inp.value.trim();if(!v){inp.focus();return;}store('name',v);$('#stuName').value=v;g.hidden=true;};
+  $('#gateGo').onclick=go;inp.onkeydown=e=>{if(e.key==='Enter')go();};
+  $('#stuName').addEventListener('change',()=>{if(!$('#stuName').value.trim())$('#stuName').value=load('name','');});
+})();
+
+renderStepper();
+gotoStep(CURRENT);
+if(!SR){setTimeout(()=>toast('Máy này ghi âm được nhưng chưa tự nghe được lời nói. Dùng Chrome để được hỗ trợ tốt hơn.',6000),1500);}
+window.addEventListener('beforeunload',e=>{if(QUEUE.length||BUSY||ACTIVE){e.preventDefault();e.returnValue='';}});
+</script>
+</body>
+</html>
